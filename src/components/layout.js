@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import SideNav from "./sidenav"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -21,14 +22,13 @@ const Layout = ({ location, title, children }) => {
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+
+    <div className={`global-wrapper ${isRootPath ? "home-page" : "inner-page"}`}>
+      {!isRootPath && <SideNav />}
+      <div className="main-content">
+        <header className="global-header">{header}</header>
+        <main>{children}</main>
+      </div>
     </div>
   )
 }

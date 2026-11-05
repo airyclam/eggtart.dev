@@ -1,15 +1,12 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "eggtart.dev",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Eric's Personal Website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Eric Lam",
   "dependencies": {
-    "@fontsource/merriweather": "^5.0.8",
     "@fontsource-variable/montserrat": "^5.0.17",
+    "@fontsource/merriweather": "^5.0.8",
     "gatsby": "^5.16.0",
     "gatsby-plugin-feed": "^5.16.0",
     "gatsby-plugin-image": "^3.14.0",
