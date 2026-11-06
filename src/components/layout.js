@@ -3,34 +3,37 @@ import { Link } from "gatsby"
 import SideNav from "./sidenav"
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  let header
+    const rootPath = `${__PATH_PREFIX__}/`
+    const isRootPath = location.pathname === rootPath
+    let header
 
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
+    if (isRootPath) {
+        header = (
+            <h1 className="main-heading">
+                <Link to="/">{title}</Link>
+            </h1>
+        )
+    } else {
+        header = (
+            <Link className="header-link-home" to="/">
+                {title}
+            </Link>
+        )
+    }
+
+    return (
+        <div
+            className={`global-wrapper ${
+                isRootPath ? "home-page" : "inner-page"
+            }`}
+        >
+            {!isRootPath && <SideNav />}
+            <div className="main-content">
+                <header className="global-header">{header}</header>
+                <main>{children}</main>
+            </div>
+        </div>
     )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
-
-  return (
-
-    <div className={`global-wrapper ${isRootPath ? "home-page" : "inner-page"}`}>
-      {!isRootPath && <SideNav />}
-      <div className="main-content">
-        <header className="global-header">{header}</header>
-        <main>{children}</main>
-      </div>
-    </div>
-  )
 }
 
 export default Layout

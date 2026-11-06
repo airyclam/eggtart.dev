@@ -1,7 +1,6 @@
 import * as React from "react"
 
 const SideNav = () => {
-
     // Set these values by editing "siteMetadata" in gatsby-config.js
 
     return (

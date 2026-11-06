@@ -6,13 +6,13 @@ import PixelCarousel from "../components/pixel-carousel"
 import { PageProps } from "gatsby"
 
 const LandingPage = ({ location }: PageProps) => {
-  const header = `Welcome to Lam's Kitchen`
+    const header = `Welcome to Lam's Kitchen`
 
-  return (
-    <Layout location={location} title={header}>
-      <PixelCarousel />
-    </Layout>
-  )
+    return (
+        <Layout location={location} title={header}>
+            <PixelCarousel />
+        </Layout>
+    )
 }
 
 export default LandingPage
